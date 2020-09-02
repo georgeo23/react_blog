@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode-development",
+    "server": "nodemon ./backend/server/server.js",
     "build": "webpack -p",
     "test": "jest --watch --setupFiles ./src/test/setupTests.js",
     "coverage": "jest --setupFiles ./src/test/setupTests.js --coverage --watchAll=false"
@@ -26,6 +27,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.2.2",
+    "nodemon": "^2.0.4",
     "sinon": "^9.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
@@ -36,6 +38,12 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "pgtools": "^0.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
