@@ -4,7 +4,7 @@ const cors = require("cors");
 const server = express();
 const port = process.env.PORT || 3000;
 const db = require('../db/config')
-const { index, show } = require('../db/queries')
+const { index, show, create } = require('../db/queries')
 
 
 server.use(cors());
@@ -35,4 +35,10 @@ server.get('/posts/:id', (req, res) => {
         res.json({post})
     })
     .catch(err => res.status(500).end())
+})
+server.post('/posts/new', (req, res) => {
+    db.run(create, [req.body.title, req.body.alias, req.body.body])
+        .then(console.log('entry added')
+        )
+        .catch(err => res.status(500).end())
 })
