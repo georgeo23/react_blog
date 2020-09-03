@@ -3,8 +3,13 @@ import React, {Component} from 'react'
 
 class BlogForm extends Component {
 
-    state = {title:"",alias:"",body:""}
-    
+    state = {id: 0, title:"",alias:"",body:""}
+    componentDidMount() {
+      fetch('http://localhost:3000/posts/')
+        .then(r=>r.json())
+        // .then(idx => console.log(idx.length))
+        .then(data => this.setState({id: data.length+1}))
+    }
     submitForm = (e) => {
         e.preventDefault()
         const newPost = {
@@ -17,10 +22,11 @@ class BlogForm extends Component {
             body: JSON.stringify(newPost),
             headers: { "Content-Type": "application/json" }
         }
-        fetch('http://localhost:3000/posts/new', options)
+      fetch('http://localhost:3000/posts/new', options)
         .then(console.log(newPost))
+        .then(this.props.history.push(`/posts/${this.state.id}`))
         .catch(console.warn)
-        
+      
     }
     
     handleChange = (e) => {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import SinglePost from '../Components/SinglePost'
+import { NavLink } from "react-router-dom";
 
-class MainMenu extends React.Component {
+class MainMenu extends Component {
     state = {posts:[{title:"Loading...",alias:""}]}
     componentDidMount() { 
         
@@ -15,12 +16,25 @@ class MainMenu extends React.Component {
     render() {
         const allPosts = this.state.posts  
         return (
-            <main>
-                <h1>Welcome to the Anonymous Blog</h1>
-                <h2>Post Previews</h2>
-                {allPosts.map((post,idx)=><SinglePost key={idx} showBody={false} id={post.id} title={post.title} alias={post.alias}/>)}
-            </main>
-        )
+          <main>
+            <h1>Welcome to the Anonymous Blog</h1>
+            <h2>Post Previews</h2>
+
+            <div className="gridContainer">
+              {allPosts.map((post, idx) => (
+                <NavLink key={idx}  to={`/posts/${post.id}`}>
+                  <div className="gridItem">
+                    <SinglePost
+                      showBody={false}
+                      title={post.title}
+                      alias={post.alias}
+                    />
+                  </div>
+                </NavLink>
+              ))}
+            </div>
+          </main>
+        );
     }
 }
 export default MainMenu;

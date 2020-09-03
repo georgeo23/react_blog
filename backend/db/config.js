@@ -9,6 +9,9 @@ const pool = new Pool({
   port: 5432,
 });
 
+// const pool = new Pool({
+//   database:"blogs"
+// })
 
 
 function run(q, values, callback) {

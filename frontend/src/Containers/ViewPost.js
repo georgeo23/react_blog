@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 class ViewPost extends React.Component{
     state = { post: [{ title: "Loading...", alias: "", body: "" }] }
     
-    componentDidMount(id) {
+    componentDidMount() {
         fetch(`http://localhost:3000/posts/${this.props.match.params.id}`).then(r=>r.json())
             .then(data => this.setState({ post: data }))
             .catch(console.warn)

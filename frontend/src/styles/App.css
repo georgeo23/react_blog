@@ -1,4 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 * {
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  text-align: center;
+}
+.navlink, .navlink:visited {
+  color: royalblue;
+  font-size:20px;
+  margin: 0 15vw;
+
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.gridItem {
+  box-sizing: border-box;
+  padding: 10px;
+  border: rgba(255, 255, 255) 1px solid;
+  text-align: center;
+  background-color: lightgreen;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
+}
+
+.gridItem:hover {
+  background-color: rgba(46, 240, 46, 0.8);
+  border: green 1px solid;
+}
+
+@media screen and (max-width: 1450px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+  }
+}
+
+.gridContainer,.gridItem{
+  color: black;
 }
