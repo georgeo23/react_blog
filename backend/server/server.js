@@ -22,7 +22,7 @@ server.listen(port, () =>
 server.get('/posts', (req, res) => {
     db.run(index).then(resp => {
         const posts = resp.rows
-        res.send({posts})
+        res.send(posts)
         
         })
         .catch(err => res.status(500).end())   
