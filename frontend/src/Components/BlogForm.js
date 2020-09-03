@@ -17,8 +17,8 @@ class BlogForm extends Component {
             body: JSON.stringify(newPost),
             headers: { "Content-Type": "application/json" }
         }
-        fetch('https://localhost:3000/posts/new', options)
-        .then(r => r.json())
+        fetch('http://localhost:3000/posts/new', options)
+        .then(console.log(newPost))
         .catch(console.warn)
         
     }

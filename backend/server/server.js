@@ -37,6 +37,7 @@ server.get('/posts/:id', (req, res) => {
     .catch(err => res.status(500).end())
 })
 server.post('/posts/new', (req, res) => {
+ 
     db.run(create, [req.body.title, req.body.alias, req.body.body])
         .then(console.log('entry added')
         )
