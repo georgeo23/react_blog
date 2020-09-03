@@ -18,7 +18,7 @@ class MainMenu extends React.Component {
             <main>
                 <h1>Welcome to the Anonymous Blog</h1>
                 <h2>Post Previews</h2>
-                {allPosts.map((post,idx)=><SinglePost key={idx} showBody={false} title={post.title} alias={post.alias}/>)}
+                {allPosts.map((post,idx)=><SinglePost key={idx} showBody={false} id={post.id} title={post.title} alias={post.alias}/>)}
             </main>
         )
     }

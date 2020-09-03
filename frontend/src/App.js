@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from "./Components/NavBar";
 import MainMenu from './Containers/MainMenu'
 import SinglePost from './Components/SinglePost'
+import ViewPost from "./Containers/ViewPost";
 class App extends React.Component {
   state = {};
   render() {
@@ -14,7 +15,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={MainMenu} />
           <Route path='/newpost' component={BlogForm} />
-          <Route path='/posts/:id' component={SinglePost} />
+          <Route path='/posts/:id' component={ViewPost} />
         </Switch>
         
       </>

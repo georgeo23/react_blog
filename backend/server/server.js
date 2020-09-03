@@ -32,7 +32,7 @@ server.get('/posts/:id', (req, res) => {
     db.run(show, [req.params.id])
     .then(resp => {
         const post = resp.rows
-        res.json({post})
+        res.json(post)
     })
     .catch(err => res.status(500).end())
 })
