@@ -37,11 +37,13 @@ class BlogForm extends Component {
     render(){
         return (
           <main>
+            <h1>Create New Blog Post</h1>
             <form onSubmit={this.submitForm}>
               <input
                 onChange={this.handleChange}
                 required
                 name="title"
+                className="inputs"    
                 type="text"
                 placeholder="Title"
                 maxLength="30"
@@ -53,6 +55,7 @@ class BlogForm extends Component {
                 onChange={this.handleChange}
                 required
                 name="alias"
+                className="inputs"
                 type="text"
                 placeholder="Alias"
                 maxLength="30"
@@ -60,14 +63,14 @@ class BlogForm extends Component {
 
               <br />
 
-              <input
+              <textarea
                 onChange={this.handleChange}
                 required
                 name="body"
-                type="text"
+                className="inputs"
                 placeholder="Blog Text"
                 maxLength="500"
-              ></input>
+              ></textarea>
               <br />
               <input type="submit" value="submit" />
             </form>
