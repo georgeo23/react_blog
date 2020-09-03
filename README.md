@@ -8,7 +8,7 @@
 
 - ### Windows
     - In ./backend/db/config.js use Lines 4-10 & Comment Out Lines 12-14.
-    - Create .env file in top level and write 'password="*Your Postgress Password*"
+    - Create .env file in top level and write 'password="*Your Postgres Password*"
     - Edit port and user if necessary
 - ### Mac
     - In ./backend/db/config.js use Lines 12-14 & Comment Out Lines 1-10.
